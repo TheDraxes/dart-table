@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { PlayerTableComponent } from './player-table/player-table.component';
 import { PlayerSelectionComponent } from './player-selection/player-selection.component';
 import { FormsModule } from '@angular/forms';
+import { MenueComponent } from './menue/menue.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlayerTableComponent,
-    PlayerSelectionComponent
+    PlayerSelectionComponent,
+    MenueComponent
   ],
   imports: [
     BrowserModule,

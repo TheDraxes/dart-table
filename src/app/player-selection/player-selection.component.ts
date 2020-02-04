@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { GameService } from "../game.service";
 
 @Component({
   selector: 'app-player-selection',
@@ -11,7 +12,9 @@ export class PlayerSelectionComponent implements OnInit {
     name: '',
   }];
 
-  constructor() { }
+  @Output() start: EventEmitter<any> = new EventEmitter();
+
+  constructor(private gameService: GameService) { }
 
   ngOnInit() {
 
@@ -24,7 +27,10 @@ export class PlayerSelectionComponent implements OnInit {
   startPlaying() {
     this.players.forEach(player => {
       console.log(player.name);
+      this.gameService.addPlayer(player);
+      this.start.emit();
     });
+
   }
 
 }

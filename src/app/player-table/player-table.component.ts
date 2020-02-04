@@ -28,7 +28,7 @@ export class PlayerTableComponent implements OnInit {
 
   addNewRow(value: number) {
     console.log(value);
-    let last = this.Rows[this.Rows.length - 1].leftOver;
+    const last = this.Rows[this.Rows.length - 1].leftOver;
     this.Rows.push(new TableRow(value, last - value));
   }
 
