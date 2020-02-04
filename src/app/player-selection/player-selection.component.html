@@ -1,1 +1,35 @@
-<p>player-selection works!</p>
+<div class="container">
+
+  <form #playerForm="ngForm" class="" (ngSubmit)="startPlaying()">
+    <section *ngFor="let player of players; let i = index;">
+      <br/>
+      <div class="row">
+        <div class="input-group flex-nowrap">
+
+          <!--Spieler Nummer-->
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="addon-wrapping">{{i + 1}}</span>
+          </div>
+
+          <!--Textfeld-->
+          <input type="text" class="form-control" name="player_{{i}}" placeholder="Name" [(ngModel)]="player.name">
+
+        </div>
+      </div>
+
+    </section>
+  </form>
+
+  <br/>
+
+  <!--Add Button-->
+  <button class="btn btn-success" (click)="addPlayer()"><i class="fas fa-plus"></i></button>
+
+  <button class="btn btn-primary" (click)="startPlaying()">Start</button>
+
+</div>
+
+
+
+
+

@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerSelectionComponent implements OnInit {
 
+  public players: any[] = [{
+    name: '',
+  }];
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  addPlayer() {
+    this.players.push({name: ''});
+  }
+
+  startPlaying() {
+    this.players.forEach(player => {
+      console.log(player.name);
+    });
   }
 
 }
