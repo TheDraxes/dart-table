@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GameService } from "../game.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-player-selection',
@@ -12,12 +13,14 @@ export class PlayerSelectionComponent implements OnInit {
     name: '',
   }];
 
+  public gameMode: string;
+
   @Output() start: EventEmitter<any> = new EventEmitter();
 
-  constructor(private gameService: GameService) { }
+  constructor(private gameService: GameService, private router: Router) { }
 
   ngOnInit() {
-
+    this.gameMode = this.gameService.gameMode;
   }
 
   addPlayer() {
@@ -28,9 +31,12 @@ export class PlayerSelectionComponent implements OnInit {
     this.players.forEach(player => {
       console.log(player.name);
       this.gameService.addPlayer(player);
-      this.start.emit();
+      //this.start.emit();
     });
+  }
 
+  navBack() {
+    this.router.navigate(['/']);
   }
 
 }

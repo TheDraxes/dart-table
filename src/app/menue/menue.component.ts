@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { GameService } from "../game.service";
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -14,14 +15,26 @@ export class MenueComponent implements OnInit {
   gameMode: string;
 
 
-  constructor(private gameService: GameService, private router: Router) { }
+  constructor(private gameService: GameService, private router: Router, private toastrService: ToastrService) { }
 
   ngOnInit() {
   }
 
   setGameMode() {
-    console.log(this.gameMode);
-    this.router.navigate(['player']);
+    if (this.gameMode !== undefined && this.gameMode !== '') {
+      console.log(this.gameMode);
+      this.router.navigate(['player']);
+      this.gameService.setGameMode(this.gameMode);
+    } else {
+      this.showToastMessage();
+      return;
+    }
+  }
+
+  showToastMessage() {
+    this.toastrService.error("Du musst einen Spielmodus wählen!", '', {
+      positionClass: 'toast-bottom-right'
+    });
   }
 
 }

@@ -1,4 +1,28 @@
 <div class="container">
+  <br/>
+  <div class="row">
+    <div class="col-auto p-0">
+      <div class="btn-group" role="group" aria-label="Basic example">
+
+        <!--Add Button-->
+        <button class="btn btn-success" (click)="addPlayer()"><i class="fas fa-plus"></i></button>
+
+        <!--Back Button-->
+        <button class="btn btn-secondary" (click)="navBack()">Zurück</button>
+
+        <!--Start Button-->
+        <button class="btn btn-primary" (click)="startPlaying()">Start</button>
+
+      </div>
+    </div>
+    <div class="col-1">
+
+    </div>
+    <div class="col p-0">
+      <h3> Spiel: {{gameMode}} </h3>
+    </div>
+
+  </div>
 
   <form #playerForm="ngForm" class="" (ngSubmit)="startPlaying()">
     <section *ngFor="let player of players; let i = index;">
@@ -19,14 +43,6 @@
 
     </section>
   </form>
-
-  <br/>
-
-  <!--Add Button-->
-  <button class="btn btn-success" (click)="addPlayer()"><i class="fas fa-plus"></i></button>
-
-  <button class="btn btn-primary" (click)="startPlaying()">Start</button>
-
 </div>
 
 
