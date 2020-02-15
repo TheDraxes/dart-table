@@ -46,7 +46,6 @@ export class PlayerTableComponent implements OnInit {
 
         this.router.navigate(['win']);
         this.gameService.clean();
-        this.winService.clean();
 
       } else if(newLeftOver < 0) {
         this.Rows.push(new TableRow(value, lastLeftOver));

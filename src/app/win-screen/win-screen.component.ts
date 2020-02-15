@@ -18,6 +18,7 @@ export class WinScreenComponent implements OnInit {
   }
 
   home() {
+    this.winService.clean();
     this.router.navigate(['/']);
   }
 }
