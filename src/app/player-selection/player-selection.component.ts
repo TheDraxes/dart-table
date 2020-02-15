@@ -29,9 +29,8 @@ export class PlayerSelectionComponent implements OnInit {
 
   startPlaying() {
     this.players.forEach(player => {
-      console.log(player.name);
       this.gameService.addPlayer(player);
-      //this.start.emit();
+      this.router.navigate(['game'])
     });
   }
 

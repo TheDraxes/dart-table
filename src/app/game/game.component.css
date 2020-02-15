@@ -1,0 +1,9 @@
+.no-mp {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}

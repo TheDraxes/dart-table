@@ -9,3 +9,7 @@
 .no-padding-td {
   padding: 0px !important;
 }
+
+.active {
+  display: block !important;
+}
