@@ -10,6 +10,7 @@ import { PlayerSelectionComponent } from './player-selection/player-selection.co
 import { FormsModule } from '@angular/forms';
 import { MenueComponent } from './menue/menue.component';
 import { GameComponent } from './game/game.component';
+import { WinScreenComponent } from './win-screen/win-screen.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GameComponent } from './game/game.component';
     PlayerTableComponent,
     PlayerSelectionComponent,
     MenueComponent,
-    GameComponent
+    GameComponent,
+    WinScreenComponent
   ],
   imports: [
     BrowserModule,

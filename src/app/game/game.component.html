@@ -1,21 +1,21 @@
 <div class="row h-100">
 
   <div class="col-2 no-mp my-auto">
-    <button class="btn btn-primary" style="float: right;"> < </button>
+    <button class="btn btn-primary" style="float: right;" (click)="last()"> < </button>
   </div>
 
-  <div class="col my-auto">
+  <div class="col">
 
     <!-- <app-player-table [isActive]="active"></app-player-table> -->
 
     <section *ngFor="let pt of playerTables; let i = index;">
-      <p>index: {{pt.index}}; index: {{pt.player}}</p>
+      <app-player-table [(isActive)]="pt.active" [(Player)]="pt.player" [playerIndex]="pt.index" (enterPressed)="next()"></app-player-table>
     </section>
 
   </div>
 
   <div class="col-2 no-mp my-auto">
-    <button class="btn btn-primary" style="float: left;"> > </button>
+    <button class="btn btn-primary" style="float: left;" (click)="next()"> > </button>
   </div>
 
 </div>

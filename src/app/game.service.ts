@@ -18,4 +18,9 @@ export class GameService {
   setGameMode(gameMode: string) {
     this.gameMode = gameMode;
   }
+
+  clean() {
+    this.gameMode = "";
+    this.player = [];
+  }
 }

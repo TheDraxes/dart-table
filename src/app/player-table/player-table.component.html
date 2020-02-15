@@ -1,32 +1,33 @@
+<section style="display: none;" [class.active]="isActive">
+  <h1>{{Player}}</h1>
 
-<h1>{{Player}}</h1>
-
-<table class="table-sm table-bordered" style="display: none;" [class.active]="isActive"> <!-- [ngClass]="{'active': isActive === 'true'}" -->
-  <thead>
-    <tr>
-      <th scope="col" style="width: 50%;">Wurf</th>
-      <th scope="col" style="width: 50%;">To GO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-template ngFor let-r [ngForOf]="Rows" let-i="index">
+  <table class="table-sm table-bordered"> <!-- [ngClass]="{'active': isActive === 'true'}" -->
+    <thead>
+      <tr>
+        <th scope="col" style="width: 50%;">Wurf</th>
+        <th scope="col" style="width: 50%;">To GO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-r [ngForOf]="Rows" let-i="index">
+        <tr class="big-font">
+          <td>
+            {{r.throw}}
+          </td>
+          <td>
+            {{r.leftOver}}
+          </td>
+        </tr>
+      </ng-template>
       <tr class="big-font">
         <td>
-          {{r.throw}}
+          <input type="text" class="player-input" (keyup)="onKey($event)">
         </td>
         <td>
-          {{r.leftOver}}
+
         </td>
       </tr>
-    </ng-template>
-    <tr class="big-font">
-      <td>
-        <input type="text" class="player-input" (keyup)="onKey($event)">
-      </td>
-      <td>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</section>
 
