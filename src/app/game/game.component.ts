@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from "../game.service";
+import { GameService } from '../game.service';
 import { PlayerTable } from './PlayerTable';
 
 @Component({
@@ -10,7 +10,7 @@ import { PlayerTable } from './PlayerTable';
 export class GameComponent implements OnInit {
 
   players: string[];
-  activeTableID: number = 0;
+  activeTableID = 0;
   playerTables: PlayerTable[] = [];
 
   constructor( private gameService: GameService ) { }
@@ -18,7 +18,7 @@ export class GameComponent implements OnInit {
   ngOnInit() {
     this.players = this.gameService.player;
 
-    for(let i = 0; i < this.players.length; i++) {
+    for (let i = 0; i < this.players.length; i++) {
       this.playerTables.push(new PlayerTable(i, this.players[i]));
     }
 

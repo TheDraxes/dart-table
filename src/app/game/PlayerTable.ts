@@ -3,9 +3,9 @@ export class PlayerTable {
   player: string;
   active: boolean;
 
-  constructor(_index: number, _player: string) {
-    this.index = _index;
-    this.player = _player;
+  constructor(INDEX: number, PLAYER: string) {
+    this.index = INDEX;
+    this.player = PLAYER;
     this.active = false;
   }
 }

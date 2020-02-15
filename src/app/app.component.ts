@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'dart-table';
-  active: boolean = false;
+  active = false;
 
   constructor(private router: Router) {}
 

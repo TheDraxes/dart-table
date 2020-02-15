@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { TableRow } from './TableRow';
-import { GameService } from "../game.service";
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-player-table',
@@ -21,11 +21,11 @@ export class PlayerTableComponent implements OnInit {
     this.Rows = [];
     this.GameMode = Number(this.gameService.gameMode);
     this.Rows.push(new TableRow(0, this.GameMode));
-    console.log("ist Aktiv: " + this.isActive);
+    console.log('ist Aktiv: ' + this.isActive);
   }
 
   onKey(event) {
-    if(event.keyCode === KEY_CODE.ENTER) {
+    if (event.keyCode === KEY_CODE.ENTER) {
       this.addNewRow(event.target.value);
     }
   }
