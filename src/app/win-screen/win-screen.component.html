@@ -4,7 +4,7 @@
 
     <div class="col">
       <div class="alert alert-success" role="alert" style="font-size: 3em;">
-        {{winner}} hat gewonnen!
+        {{winner.name}} hat gewonnen!
       </div>
     </div>
 
@@ -12,7 +12,17 @@
 
   <div class="row">
     <div class="col-auto">
-      <button (click)="home()"> Zurück </button>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+
+        <!--Back Button-->
+        <button class="btn btn-primary" (click)="home()"> Zurück </button>
+
+        <!--Start Button-->
+        <button class="btn btn-success" (click)="newGame()"> Erneut Spielen </button>
+
+      </div>
+
     </div>
   </div>
 

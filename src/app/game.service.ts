@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Player } from './models/Player';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,13 @@ import { Injectable } from '@angular/core';
 export class GameService {
 
   gameMode: string;
-  player: string[] = [];
+  player: Player[] = [];
 
   constructor() { }
 
   addPlayer(player: any) {
-    this.player.push(player.name);
+    const pl = new Player(player.name);
+    this.player.push(pl);
   }
 
   setGameMode(gameMode: string) {
@@ -20,7 +22,7 @@ export class GameService {
   }
 
   clean() {
-    this.gameMode = "";
+    this.gameMode = '';
     this.player = [];
   }
 }

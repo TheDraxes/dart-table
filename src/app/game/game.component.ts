@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
 import { PlayerTable } from './PlayerTable';
+import { Player } from '../models/Player';
 
 @Component({
   selector: 'app-game',
@@ -9,7 +10,7 @@ import { PlayerTable } from './PlayerTable';
 })
 export class GameComponent implements OnInit {
 
-  players: string[];
+  players: Player[];
   playerTables: PlayerTable[] = [];
 
   activeIndex: number;
@@ -20,7 +21,6 @@ export class GameComponent implements OnInit {
     this.players = this.gameService.player;
 
     this.activeIndex = 0;
-
 
     for (let i = 0; i < this.players.length; i++) {
       this.playerTables.push(new PlayerTable(i, this.players[i]));

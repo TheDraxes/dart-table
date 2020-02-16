@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { GameService } from "../game.service";
+import { GameService } from '../game.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -32,7 +32,7 @@ export class MenueComponent implements OnInit {
   }
 
   showToastMessage() {
-    this.toastrService.error("Du musst einen Spielmodus wählen!", '', {
+    this.toastrService.error('Du musst einen Spielmodus wählen!', '', {
       positionClass: 'toast-bottom-right'
     });
   }

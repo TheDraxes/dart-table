@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Player } from './models/Player';
 
 @Injectable({
   providedIn: 'root'
@@ -6,11 +7,11 @@ import { Injectable } from '@angular/core';
 
 export class WinService {
 
-  player: string;
+  player: Player;
 
   constructor() { }
 
   clean() {
-    this.player = "";
+    this.player = null;
   }
 }

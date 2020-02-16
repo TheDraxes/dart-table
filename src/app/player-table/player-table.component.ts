@@ -3,6 +3,7 @@ import { TableRow } from './TableRow';
 import { GameService } from '../game.service';
 import { WinService } from '../win.service';
 import { Router } from '@angular/router';
+import { Player } from '../models/Player';
 
 @Component({
   selector: 'app-player-table',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 export class PlayerTableComponent implements OnInit {
 
 
-  @Input() Player: string;
+  @Input() Player: Player;
   @Input() isActive: boolean;
   @Input() playerIndex: number;
 
@@ -27,7 +28,6 @@ export class PlayerTableComponent implements OnInit {
     this.Rows = [];
     this.GameMode = Number(this.gameService.gameMode);
     this.Rows.push(new TableRow(0, this.GameMode));
-    console.log('ist Aktiv: ' + this.isActive);
   }
 
   onKey(event) {
@@ -37,15 +37,12 @@ export class PlayerTableComponent implements OnInit {
       const newLeftOver = lastLeftOver - value;
 
       if (newLeftOver === 0) {
-        console.log('=========================================================');
-        console.log('====================Spieler Hat Gewonnen=================');
-        console.log('=========================================================');
+
         this.Rows.push(new TableRow(value, lastLeftOver - value));
 
         this.winService.player = this.Player;
 
         this.router.navigate(['win']);
-        this.gameService.clean();
 
       } else if (newLeftOver < 0) {
         this.Rows.push(new TableRow(value, lastLeftOver));

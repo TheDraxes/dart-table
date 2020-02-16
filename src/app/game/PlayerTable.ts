@@ -1,9 +1,11 @@
+import { Player } from '../models/Player';
+
 export class PlayerTable {
   index: number;
-  player: string;
+  player: Player;
   active: boolean;
 
-  constructor(INDEX: number, PLAYER: string) {
+  constructor(INDEX: number, PLAYER: Player) {
     this.index = INDEX;
     this.player = PLAYER;
     this.active = false;
