@@ -32,14 +32,14 @@ export class PlayerTableComponent implements OnInit {
 
   onKey(event) {
     if (event.keyCode === KEY_CODE.ENTER) {
-      let value = event.target.value;
+      const value = event.target.value;
       const lastLeftOver = this.Rows[this.Rows.length - 1].leftOver;
-      let newLeftOver = lastLeftOver - value;
+      const newLeftOver = lastLeftOver - value;
 
       if (newLeftOver === 0) {
-        console.log("=========================================================");
-        console.log("====================Spieler Hat Gewonnen=================");
-        console.log("=========================================================");
+        console.log('=========================================================');
+        console.log('====================Spieler Hat Gewonnen=================');
+        console.log('=========================================================');
         this.Rows.push(new TableRow(value, lastLeftOver - value));
 
         this.winService.player = this.Player;
@@ -47,7 +47,7 @@ export class PlayerTableComponent implements OnInit {
         this.router.navigate(['win']);
         this.gameService.clean();
 
-      } else if(newLeftOver < 0) {
+      } else if (newLeftOver < 0) {
         this.Rows.push(new TableRow(value, lastLeftOver));
       } else {
         this.Rows.push(new TableRow(value, lastLeftOver - value));

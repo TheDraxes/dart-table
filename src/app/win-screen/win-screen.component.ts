@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WinService } from "../win.service";
+import { WinService } from '../win.service';
 import { Router } from '@angular/router';
 
 @Component({
