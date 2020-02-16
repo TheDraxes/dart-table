@@ -10,7 +10,6 @@ import { PlayerTable } from './PlayerTable';
 export class GameComponent implements OnInit {
 
   players: string[];
-  activeTableID = 0;
   playerTables: PlayerTable[] = [];
 
   activeIndex: number;
@@ -25,13 +24,14 @@ export class GameComponent implements OnInit {
 
     for (let i = 0; i < this.players.length; i++) {
       this.playerTables.push(new PlayerTable(i, this.players[i]));
+      console.log(this.players[i]);
     }
 
     this.playerTables[this.activeIndex].active = true;
 
   }
 
-  last() {
+  next() {
     this.playerTables[this.activeIndex].active = false;
     this.activeIndex = this.activeIndex + 1;
 
@@ -42,7 +42,7 @@ export class GameComponent implements OnInit {
     this.playerTables[this.activeIndex].active = true;
   }
 
-  next() {
+  last() {
 
     this.playerTables[this.activeIndex].active = false;
     this.activeIndex = this.activeIndex - 1;

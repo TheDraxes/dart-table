@@ -32,7 +32,9 @@ export class PlayerSelectionComponent implements OnInit {
     this.players.forEach(player => {
       this.gameService.addPlayer(player);
       this.router.navigate(['game']);
+      console.log(player);
     });
+
   }
 
   navBack() {
