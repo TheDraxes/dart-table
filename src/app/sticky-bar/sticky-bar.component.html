@@ -1,0 +1,35 @@
+<section style="display: none;" [class.active]="isActive">
+
+  <div class="sticky-top">
+
+    <div class="row">
+
+      <div class="col-auto">
+        <button class="button btn btn-secondary" (click)="leftCl()"> <i class="fas fa-chevron-left"></i> </button>
+      </div>
+
+      <div class="col big-font">
+        {{player.name}}
+      </div>
+
+      <div class="col big-font">
+        Legs: {{player.legs}}
+      </div>
+
+      <div class="col big-font">
+        Avg.: {{computeAverage()}}
+      </div>
+
+      <div class="col big-font">
+        {{player.leftOver}}
+      </div>
+
+      <div class="col-auto">
+        <button class="button btn btn-secondary" (click)="rightCl()"> <i class="fas fa-chevron-right"></i> </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

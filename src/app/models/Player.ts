@@ -1,12 +1,14 @@
 export class Player {
   name: string;
 
-  legs: number;
-  avg: number;
+  public legs: number;
+  public leftOver: number;
+  public roundsPlayed: number;
 
   constructor(name: string) {
     this.name = name;
     this.legs = 0;
-    this.avg = 0;
+    this.leftOver = 0;
+    this.roundsPlayed = 0;
   }
 }

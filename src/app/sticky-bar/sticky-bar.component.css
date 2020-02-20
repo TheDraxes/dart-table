@@ -1,0 +1,18 @@
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: lightskyblue;
+}
+
+.active {
+  display: inline !important;
+}
+
+.big-font {
+  font-size: 3em;
+}
+
+.button {
+  height: 100%;
+}

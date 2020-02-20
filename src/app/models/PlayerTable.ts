@@ -1,4 +1,4 @@
-import { Player } from '../models/Player';
+import { Player } from './Player';
 
 export class PlayerTable {
   index: number;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
-import { TableRow } from './TableRow';
+import { TableRow } from '../models/TableRow';
 import { GameService } from '../game.service';
 import { WinService } from '../win.service';
 import { Router } from '@angular/router';
@@ -41,6 +41,7 @@ export class PlayerTableComponent implements OnInit {
         this.Rows.push(new TableRow(value, lastLeftOver - value));
 
         this.winService.player = this.Player;
+        this.Player.legs++;
 
         this.router.navigate(['win']);
 
@@ -50,11 +51,21 @@ export class PlayerTableComponent implements OnInit {
         this.Rows.push(new TableRow(value, lastLeftOver - value));
       }
 
+      this.updatePlayerData();
+
       event.target.value = '';
       this.enterPressed.emit();
     }
   }
 
+  updatePlayerData() {
+    this.gameService.player.forEach(player => {
+      if (player.name === this.Player.name) {
+        player.roundsPlayed++;
+        player.leftOver = this.Rows[this.Rows.length - 1].leftOver;
+      }
+    });
+  }
 }
 
 export enum KEY_CODE {

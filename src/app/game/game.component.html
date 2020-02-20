@@ -1,21 +1,11 @@
-<div class="row h-100">
+<section *ngFor="let pt of playerTables; let i = index;" style="height: 0px;">
 
-  <div class="col-2 no-mp my-auto">
-    <button class="btn btn-primary" style="float: right;" (click)="last()"> < </button>
+  <app-sticky-bar [(player)]="pt.player" [(isActive)]="pt.active" (left)="last()" (next)="next()"></app-sticky-bar>
+
+  <br />
+
+  <div class="container">
+    <app-player-table [(isActive)]="pt.active" [(Player)]="pt.player" [playerIndex]="pt.index" (enterPressed)="next()"></app-player-table>
   </div>
 
-  <div class="col">
-
-    <!-- <app-player-table [isActive]="active"></app-player-table> -->
-
-    <section *ngFor="let pt of playerTables; let i = index;">
-      <app-player-table [(isActive)]="pt.active" [(Player)]="pt.player" [playerIndex]="pt.index" (enterPressed)="next()"></app-player-table>
-    </section>
-
-  </div>
-
-  <div class="col-2 no-mp my-auto">
-    <button class="btn btn-primary" style="float: left;" (click)="next()"> > </button>
-  </div>
-
-</div>
+</section>

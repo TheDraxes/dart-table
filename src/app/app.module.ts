@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MenueComponent } from './menue/menue.component';
 import { GameComponent } from './game/game.component';
 import { WinScreenComponent } from './win-screen/win-screen.component';
+import { StickyBarComponent } from './sticky-bar/sticky-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WinScreenComponent } from './win-screen/win-screen.component';
     PlayerSelectionComponent,
     MenueComponent,
     GameComponent,
-    WinScreenComponent
+    WinScreenComponent,
+    StickyBarComponent
   ],
   imports: [
     BrowserModule,

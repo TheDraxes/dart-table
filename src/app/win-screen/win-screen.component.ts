@@ -26,6 +26,7 @@ export class WinScreenComponent implements OnInit {
   }
 
   newGame() {
+    this.gameService.newGame();
     this.router.navigate(['game']);
   }
 }

@@ -25,4 +25,10 @@ export class GameService {
     this.gameMode = '';
     this.player = [];
   }
+
+  newGame() {
+    this.player.forEach(p => {
+      p.roundsPlayed = 0;
+    });
+  }
 }
